@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather</title>
+   
+</head>
+
+<body>
+{% for weather in data %}
+<div>
+    <div>{{ weather.city }}</div>
+    <br>
+    <div>{{ weather.tempr}} °C
+
+    	<input type="button" value="in Ferhenite" onclick="change(this , {{ weather.tempr}} ,{{ weather.tempf}}  )">
+    	<script>
+		function change( a , ho , go )
+		{
+		    if ( a.value === "in Ferhenite" )
+		        a.value = go  + '°F' ;
+		    else
+		        a.value = "in Ferhenite";
+		}
+		</script>
+    </div>
+    <br>                                            
+</div>
+{% endfor %}
+</body>
+
+</html>
